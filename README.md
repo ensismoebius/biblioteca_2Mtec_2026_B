@@ -290,3 +290,4 @@ Pull Request individual (veja a issue "Adicionar seu nome ao README").
 |---|---|---|
 | Raul Esteves |raulxt3d |10537|
 | Pyetro Tiago ||10380|
+| Nathan Rosário de Almeida | d3monrootkit | 10400 |
