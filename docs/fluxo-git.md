@@ -14,6 +14,11 @@ git checkout -b tipo/issue-NN-descricao-curta
 
 
 
+## 3. Fazer Commit
+Após fazer as alterações nos arquivos, faça o commit:
+
+git add .
+git commit -m "tipo/descricao-curta"
 
 
 
