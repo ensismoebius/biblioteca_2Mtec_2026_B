@@ -32,6 +32,23 @@ git push origin tipo/issue-NN-descricao-curta
 2. Clique em **Compare & pull request**.
 3. O template de PR irá carregar automaticamente preenchendo as secções solicitadas (o que foi feito, issue que fecha e como testar)[cite: 1, 9].
 
+## 4. Enviar a Branch para o GitHub (Push)
+Envia a tua branch local para o repositório remoto:
+
+git push origin tipo/issue-NN-descricao-curta
+
+
+## 5. Abrir o Pull Request (PR)
+
+1. Entra ao repositório no **GitHub**.
+2. Clique em **Compare & pull request**.
+3. O template de PR irá carregar automaticamente preenchendo as secções solicitadas (o que foi feito, issue que fecha e como testar)[cite: 1, 9].
+
+## 6.  Merge
+
+1. Aguarde as validações automáticas dos bots.
+2. Obtenha a aprovação de três colegas.
+3. Clique no botão verde "Merge pull request" e confirme o merge para enviar o código para a main.
 
 
 
