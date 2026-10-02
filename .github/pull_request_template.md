@@ -50,3 +50,4 @@ refactor: mudança de código que não adiciona uma funcionalidade e também nã
 style: mudanças no código que não afetam seu significado (espaço em branco, formatação, ponto e vírgula, etc);
 test: adicionar ou corrigir testes.
 
+# Padrão de Commits
