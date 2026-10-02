@@ -51,4 +51,9 @@ test: adicionar ou corrigir testes.
 
 A estrutura deve seguir: Tipo/-descricao-curta
 
+## Tipos
+
+fix - Commits do tipo fix indicam que seu trecho de código commitado está solucionando um problema (bug fix), (se relaciona com o PATCH do versionamento semântico).
+
+
 
