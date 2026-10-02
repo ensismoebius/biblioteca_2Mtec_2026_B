@@ -33,4 +33,11 @@ Closes #
 
 ## Estrutura
 
-a estrutura
+## Estrutura 
+
+a estrutura teve seguir : tipo/issue-NN-descricao-curta
+* **NN**: Número da issue/tarefa (ex: `issue-123`).
+* **tipo**: Um dos tipos listados abaixo.
+* **descricao-curta**: Resumo da tarefa em letras minúsculas e separado por hífens.
+
+
