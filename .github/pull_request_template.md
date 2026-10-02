@@ -63,4 +63,8 @@ style - Commits do tipo style indicam que houveram alterações referentes a for
 
 refactor - Commits do tipo refactor referem-se a mudanças devido a refatorações que não alterem sua funcionalidade, como por exemplo, uma alteração no formato como é processada determinada parte da tela, mas que manteve a mesma funcionalidade, ou melhorias de performance devido a um code review.
 
+build - Commits do tipo build são utilizados quando são realizadas modificações em arquivos de build e dependências.
+
+test - Commits do tipo test são utilizados quando são realizadas alterações em testes, seja criando, alterando ou excluindo testes unitários. (Não inclui alterações em código)
+
 
