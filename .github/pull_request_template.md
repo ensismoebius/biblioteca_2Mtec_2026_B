@@ -40,4 +40,9 @@ a estrutura teve seguir : tipo/issue-NN-descricao-curta
 * **tipo**: Um dos tipos listados abaixo.
 * **descricao-curta**: Resumo da tarefa em letras minúsculas e separado por hífens.
 
+## Tipos 
+
+docs: apenas mudanças de documentação;
+feat: uma nova funcionalidade;
+fix: a correção de um bug;
 
