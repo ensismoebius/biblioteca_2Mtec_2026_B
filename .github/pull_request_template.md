@@ -27,3 +27,48 @@ Closes #
 - [ ] Testei manualmente no navegador (quando aplicável)
 - [ ] Adicionei/atualizei testes automatizados (quando aplicável)
 - [ ] O PR toca apenas o que é necessário para fechar a issue acima
+
+
+#  Padrão de Branches 
+
+## Estrutura 
+
+a estrutura teve seguir : tipo/issue-NN-descricao-curta
+* **NN**: Número da issue/tarefa (ex: `issue-123`).
+* **tipo**: Um dos tipos listados abaixo.
+* **descricao-curta**: Resumo da tarefa em letras minúsculas e separado por hífens.
+
+## Tipos 
+
+docs: apenas mudanças de documentação;
+feat: uma nova funcionalidade;
+fix: a correção de um bug;
+perf: mudança de código focada em melhorar performance;
+refactor: mudança de código que não adiciona uma funcionalidade e também não corrigi um bug;
+style: mudanças no código que não afetam seu significado (espaço em branco, formatação, ponto e vírgula, etc);
+test: adicionar ou corrigir testes.
+
+
+# Padrão de Commits
+
+## Estrutura
+
+A estrutura deve seguir: Tipo/-descricao-curta
+
+## Tipos
+
+fix - Commits do tipo fix indicam que seu trecho de código commitado está solucionando um problema (bug fix), (se relaciona com o PATCH do versionamento semântico).
+
+feat- Commits do tipo feat indicam que seu trecho de código está incluindo um novo recurso (se relaciona com o MINOR do versionamento semântico).
+
+docs - Commits do tipo docs indicam que houveram mudanças na documentação, como por exemplo no Readme do seu repositório. (Não inclui alterações em código).
+
+style - Commits do tipo style indicam que houveram alterações referentes a formatações de código, semicolons, trailing spaces, lint... (Não inclui alterações em código).
+
+refactor - Commits do tipo refactor referem-se a mudanças devido a refatorações que não alterem sua funcionalidade, como por exemplo, uma alteração no formato como é processada determinada parte da tela, mas que manteve a mesma funcionalidade, ou melhorias de performance devido a um code review.
+
+build - Commits do tipo build são utilizados quando são realizadas modificações em arquivos de build e dependências.
+
+test - Commits do tipo test são utilizados quando são realizadas alterações em testes, seja criando, alterando ou excluindo testes unitários. (Não inclui alterações em código)
+
+chore - Commits do tipo chore indicam atualizações de tarefas de build, configurações de administrador, pacotes... como por exemplo adicionar um pacote no gitignore. (Não inclui alterações em código) 
