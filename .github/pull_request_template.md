@@ -25,6 +25,18 @@ Closes #
 
 - [ ] Rodei `./vendor/bin/pint` (ou equivalente) antes de abrir o PR
 - [ ] Testei manualmente no navegador (quando aplicável)
+- [ ] Adicionei/atualizei testes automatizados (quando aplicável)
+- [ ] O PR toca apenas o que é necessário para fechar a issue acima
+
+
+#  Padrão de Branches 
+
+## Estrutura 
+
+a estrutura teve seguir : tipo/issue-NN-descricao-curta
+* **NN**: Número da issue/tarefa (ex: `issue-123`).
+* **tipo**: Um dos tipos listados abaixo.
+* **descricao-curta**: Resumo da tarefa em letras minúsculas e separado por hífens.
 
 ## Tipos 
 
