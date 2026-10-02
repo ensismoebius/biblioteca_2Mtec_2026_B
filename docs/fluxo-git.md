@@ -18,3 +18,8 @@ Após fazer as alterações nos arquivos, faça o commit:
 
 git add .
 git commit -m "tipo/descricao-curta"
+
+## 4. Enviar a Branch para o GitHub (Push)
+Envia a tua branch local para o repositório remoto:
+
+git push origin tipo/issue-NN-descricao-curta
