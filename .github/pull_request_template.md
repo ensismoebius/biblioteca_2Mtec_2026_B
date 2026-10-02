@@ -67,4 +67,8 @@ build - Commits do tipo build são utilizados quando são realizadas modificaç�
 
 test - Commits do tipo test são utilizados quando são realizadas alterações em testes, seja criando, alterando ou excluindo testes unitários. (Não inclui alterações em código)
 
+chore - Commits do tipo chore indicam atualizações de tarefas de build, configurações de administrador, pacotes... como por exemplo adicionar um pacote no gitignore. (Não inclui alterações em código) 
+
+
+
 
