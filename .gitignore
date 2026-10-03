@@ -33,3 +33,4 @@ auth.json
 __pycache__/
 *.pyc
 /.code-intelligence/
+.vscode/S
