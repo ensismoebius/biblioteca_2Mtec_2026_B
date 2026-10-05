@@ -1,3 +1,13 @@
+@php
+    $menu = [
+        'Livros' => 'livros.index',
+        'Autores' => 'autores.index',
+        'Gêneros' => 'generos.index',
+        'Exemplares' => 'exemplares.index',
+        'Clientes' => 'clientes.index',
+        'Empréstimos' => 'emprestimos.index',
+    ];
+@endphp
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,6 +25,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @foreach ($menu as $label => $rota)
+                <x-nav-link :href="Route::has($rota) ? route($rota) : '#'" :active="request()->routeIs(str_replace('.index', '.*', $rota))">
+                {{ $label }}
+                </x-nav-link>
+                @endforeach
                 </div>
             </div>
 
@@ -70,6 +85,11 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            @foreach ($menu as $label => $rota)
+        <x-responsive-nav-link :href="Route::has($rota) ? route($rota) : '#'" :active="request()->routeIs(str_replace('.index', '.*', $rota))">
+        {{ $label }}
+        </x-responsive-nav-link>
+        @endforeach
         </div>
 
         <!-- Responsive Settings Options -->
