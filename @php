@@ -1,0 +1,38 @@
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Cannot use App\Models\Emprestimo as Emprestimo because the name is already in use
+
+  at routes\console.php:13
+      9▕ Artisan::command('inspire', function () {
+     10▕     $this->comment(Inspiring::quote());
+     11▕ })->purpose('Display an inspiring quote');
+     12▕ 
+  ➜  13▕ use App\Models\Emprestimo;
+     14▕ use App\Notifications\LembreteEmprestimoVence;
+     15▕ use Illuminate\Support\Facades\Schedule;
+     16▕ 
+     17▕ Schedule::call(function () {
+
+
+   Whoops\Exception\ErrorException 
+
+  Cannot use App\Models\Emprestimo as Emprestimo because the name is already in use
+
+  at routes\console.php:13
+      9▕ Artisan::command('inspire', function () {
+     10▕     $this->comment(Inspiring::quote());
+     11▕ })->purpose('Display an inspiring quote');
+     12▕ 
+  ➜  13▕ use App\Models\Emprestimo;
+     14▕ use App\Notifications\LembreteEmprestimoVence;
+     15▕ use Illuminate\Support\Facades\Schedule;
+     16▕ 
+     17▕ Schedule::call(function () {
+
+  1   vendor\filp\whoops\src\Whoops\Run.php:520
+      Whoops\Run::handleError("Cannot use App\Models\Emprestimo as Emprestimo because the name is already in use", "C:\Users\W10\pl\portable-laravel-windows\app\routes\console.php")
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
