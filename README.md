@@ -435,3 +435,4 @@ Pull Request individual (veja a issue "Adicionar seu nome ao README").
 | Cesar Augusto Denelle Mussi | Meganoot2010 | 10463 |
 | Raul Esteves | raulxt3d | 10537 |
 | Pyetro Tiago | | 10380 |
+| Laura Kelly Oliveira Almeida | koallaura | 10249 |
