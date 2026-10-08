@@ -436,3 +436,4 @@ Pull Request individual (veja a issue "Adicionar seu nome ao README").
 | Raul Esteves | raulxt3d | 10537 |
 | Lucas Cavalcante de Oliveira | Luckpoet | 10270 |
 | Pyetro Tiago | | 10380 |
+Lucas Cavalcante Lima | zkergg | 10381 |
