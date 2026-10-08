@@ -291,3 +291,5 @@ Pull Request individual (veja a issue "Adicionar seu nome ao README").
 | Kauã Batista Miranda de Sousa | KauaBMSousa | 10518 |
 | Vinicius Frazão Barros | Frazao-009 | 10275 |
 | Nathan Rosário de Almeida | d3monrootkit | 10400 |
+| Rafael Izack De Oliveira Barretos | pzzxis | 10383 |
+
