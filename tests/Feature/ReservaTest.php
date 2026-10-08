@@ -71,7 +71,6 @@ class ReservaTest extends TestCase
         );
     }
 
-    
     /**
      * A posição de cada reserva corresponde à ordem de chegada.
      */
