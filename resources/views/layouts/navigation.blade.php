@@ -30,6 +30,11 @@
                 {{ $label }}
                 </x-nav-link>
                 @endforeach
+                @can('ver-auditoria')
+                <x-nav-link :href="route('auditoria.index')" :active="request()->routeIs('auditoria.index')">
+                Auditoria
+                </x-nav-link>
+                @endcan
                 </div>
             </div>
 
