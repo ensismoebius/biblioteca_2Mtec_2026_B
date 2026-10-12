@@ -19,26 +19,24 @@
             @include('layouts.navigation')
 
             <!-- Page Heading -->
-            @isset($header)
+            @hasSection('header')
                 <header class="bg-white shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
+                        @yield('header')
                     </div>
                 </header>
-            @endisset
+            @endif
 
             <!-- Page Content -->
-        <main class="flex-1">
-            {{ $slot ?? '' }}
-            @yield('content')
+            <main class="flex-1">
+                @yield('content')
+            </main>
 
-                <footer class="bg-white border-t border-gray-100">
+            <footer class="bg-white border-t border-gray-100">
                 <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
-                 Biblioteca 2º Mtec 2026 — Turma B &copy; {{ date('Y') }}
+                    Biblioteca 2º Mtec 2026 — Turma B &copy; {{ date('Y') }}
                 </div>
-                </footer>
-
-        </main>
+            </footer>
         </div>
     </body>
 </html>
