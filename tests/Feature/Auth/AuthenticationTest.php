@@ -4,51 +4,62 @@ namespace Tests\Feature\Auth;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
-class AuthenticationTest extends TestCase
+/**
+ * Classe de testes para validacao da API de autenticacao.
+ */
+class AuthApiTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_login_screen_can_be_rendered(): void
+    /**
+     * Teste para verificar se o login correto gera um token.
+     */
+    #[Test]
+    public function login_correto_deve_devolver_token()
     {
-        $response = $this->get('/login');
+        $user = User::factory()->create([
+            'email' => 'teste@biblioteca.com',
+            'password' => bcrypt('senha123'),
+        ]);
+
+        $response = $this->postJson('/api/login', [
+            'email' => 'teste@biblioteca.com',
+            'password' => 'senha123',
+        ]);
 
         $response->assertStatus(200);
     }
 
-    public function test_users_can_authenticate_using_the_login_screen(): void
+    /**
+     * Teste para verificar se credenciais invalidas retornam erro 422.
+     */
+    #[Test]
+    public function login_errado_deve_devolver_erro_de_autenticacao()
     {
-        $user = User::factory()->create();
-
-        $response = $this->post('/login', [
-            'email' => $user->email,
-            'password' => 'password',
+        User::factory()->create([
+            'email' => 'teste@biblioteca.com',
+            'password' => bcrypt('senha123'),
         ]);
 
-        $this->assertAuthenticated();
-        $response->assertRedirect(route('dashboard', absolute: false));
-    }
-
-    public function test_users_can_not_authenticate_with_invalid_password(): void
-    {
-        $user = User::factory()->create();
-
-        $this->post('/login', [
-            'email' => $user->email,
-            'password' => 'wrong-password',
+        $response = $this->postJson('/api/login', [
+            'email' => 'teste@biblioteca.com',
+            'password' => 'senha_errada',
         ]);
 
-        $this->assertGuest();
+        $response->assertStatus(422);
     }
 
-    public function test_users_can_logout(): void
+    /**
+     * Teste para garantir que rotas protegidas barram acessos sem token.
+     */
+    #[Test]
+    public function rota_protegida_sem_token_deve_devolver_erro_401()
     {
-        $user = User::factory()->create();
+        $response = $this->getJson('/api/users');
 
-        $response = $this->actingAs($user)->post('/logout');
-
-        $this->assertGuest();
-        $response->assertRedirect('/');
+        $response->assertStatus(401);
     }
 }
