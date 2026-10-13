@@ -22,4 +22,7 @@ Route::middleware(['auth', 'can:ver-auditoria'])->group(function () {
     Route::get('/auditoria', [AuditoriaController::class, 'index'])->name('auditoria.index');
 });
 
+Route::get('/relatorios/atrasos/pdf', [RelatorioController::class, 'atrasospdf'])->name('relatorios.atrasos.pdf');
+Route::get('/relatorios/mais-emprestados/pdf', [RelatorioController::class, 'maisEmprestadosPdf'])->name('relatorios.mais-emprestados.pdf');
+
 require __DIR__.'/auth.php';
