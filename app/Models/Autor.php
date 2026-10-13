@@ -5,6 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
+
+ * Modelo representativo da tabela de autores do banco de dados.
+ */
+class Autor extends Model
+{
+    protected $table = 'autores';
+
  * Representa um autor de livros do acervo (tabela AUTORES).
  */
 class Autor extends Model
