@@ -447,3 +447,25 @@ Pull Request individual (veja a issue "Adicionar seu nome ao README").
 | Pyetro Tiago | | 10380 |
 | Paulo Henrique Borges Ferreira | Paulo-cmd1337 | 10248 |
 | Yasmin Bras | 02hollis | 10272
+
+
+---
+
+## Estado atual do projeto
+
+A aplicação Biblioteca utiliza Laravel e possui os seguintes recursos identificados no código:
+
+- Autenticação, cadastro e verificação de e-mail.
+- Painel principal e gerenciamento do perfil.
+- Auditoria de alterações com autorização específica.
+- Relatórios em PDF de empréstimos atrasados e dos livros mais emprestados.
+
+A documentação técnica está disponível na pasta `docs/`, incluindo as rotas, decisões técnicas, permissões, segurança e fluxo de desenvolvimento.
+
+## Deploy em produção
+
+A aplicação está publicada no Render:
+
+**URL:** https://biblioteca-2mtec-2026-b.onrender.com
+
+O ambiente de produção deve ser validado após alterações importantes, especialmente nas migrations, configurações e regras de acesso.
