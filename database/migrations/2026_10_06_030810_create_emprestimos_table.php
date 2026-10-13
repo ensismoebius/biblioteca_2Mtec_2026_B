@@ -11,9 +11,9 @@ return new class extends Migration
         Schema::create('EMPRESTIMOS', function (Blueprint $table) {
             $table->increments('EMPCODIGO');
 
-            $table->unsignedInteger('EMPLIVRO');
-            $table->unsignedInteger('EMPUSUARIO');
-            $table->unsignedInteger('EMPCLIENTE');
+           $table->unsignedBigInteger('EMPLIVRO');
+           $table->unsignedBigInteger('EMPUSUARIO');
+           $table->unsignedBigInteger('EMPCLIENTE');
 
             $table->date('EMPDTEMPR');
             $table->date('EMPDTDEVOL')->nullable();

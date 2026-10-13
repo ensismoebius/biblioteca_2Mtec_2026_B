@@ -312,7 +312,7 @@ Em um **novo terminal**, inicie o servidor interno do Laravel:
 ```
 php artisan serve
 
-```
+https://github.com/ensismoebius/biblioteca_2Mtec_2026_B/pull/155/conflict?name=README.md&ancestor_oid=a8ff524159ef62fe16f2877ac58696b396c23c90&base_oid=a298ca00deefbc550e3ddee587cfd18485a96995&head_oid=76c4d5bc599339044a409b31daccff39fddd6e0b```
 
 ## 🌐 Acesso à Aplicação
 
@@ -446,4 +446,10 @@ Pull Request individual (veja a issue "Adicionar seu nome ao README").
 | Lucas Cavalcante de Oliveira | Luckpoet | 10270 |
 | Pyetro Tiago | | 10380 |
 | Paulo Henrique Borges Ferreira | Paulo-cmd1337 | 10248 |
-| Yasmin Bras | 02hollis | 10272
+| Yasmin Bras | 02hollis | 10272 |
+
+## Deploy em produção
+
+A aplicação Biblioteca está publicada no Render e pode ser acessada pelo endereço:
+
+https://biblioteca-2mtec-2026-b.onrender.com
