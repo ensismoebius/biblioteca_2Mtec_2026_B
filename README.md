@@ -434,3 +434,11 @@ Pull Request individual (veja a issue "Adicionar seu nome ao README").
 | Cesar Augusto Denelle Mussi | Meganoot2010 | 10463 |
 | Raul Esteves | raulxt3d | 10537 |
 | Pyetro Tiago | | 10380 |
+
+
+
+## Deploy em produção
+
+A aplicação Biblioteca está publicada no Render e pode ser acessada pelo endereço:
+
+https://biblioteca-2mtec-2026-b.onrender.com
