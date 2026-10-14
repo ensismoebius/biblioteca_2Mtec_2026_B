@@ -5,8 +5,14 @@ namespace App\Http\Controllers;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * Gera relatorios da biblioteca em formato PDF.
+ */
 class RelatorioController extends Controller
 {
+    /**
+     * Gera o PDF dos emprestimos em atraso ha mais de sete dias.
+     */
     public function atrasospdf()
     {
         $atrasos = DB::table('EMPRESTIMOS')
@@ -23,6 +29,9 @@ class RelatorioController extends Controller
         return $pdf->download('relatorio_atrasos.pdf');
     }
 
+    /**
+     * Gera o PDF dos dez livros com mais emprestimos registrados.
+     */
     public function maisEmprestadosPdf()
     {
         $maisEmprestados = DB::table('EMPRESTIMOS')
