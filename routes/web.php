@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\AuditoriaController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RelatorioController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
