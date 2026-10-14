@@ -1,25 +1,18 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
 
-/**
- * Controller responsável por gerar relatórios em PDF.
- */
 class RelatorioController extends Controller
 {
-    /**
-     * Gera um relatório em PDF dos empréstimos que estão atrasados.
-     */
     public function atrasospdf()
     {
-        /**
-         * Consulta os empréstimos que estão atrasados (não devolvidos e com data de empréstimo maior que 7 dias atrás)
-         */
         $atrasos = DB::table('EMPRESTIMOS')
             ->join('LIVROS', 'EMPRESTIMOS.EMPLIVRO', '=', 'LIVROS.LVRCODIGO')
             ->join('CLIENTES', 'EMPRESTIMOS.EMPCLIENTE', '=', 'CLIENTES.CLICODIGO')
-            ->select('EMPRESTIMOS.*', 'LIVROS.LVRNOME', 'CLIENTES.CLINOME')
+            ->select('EMPRESTIMOS.*', 'LIVROS.LVRTITULO as LVRNOME', 'CLIENTES.CLINOME')
             ->whereNull('EMPRESTIMOS.EMPDTDEVOL')
             ->whereDate('EMPRESTIMOS.EMPDTEMPR', '<', now()->subDays(7))
             ->orderBy('EMPRESTIMOS.EMPDTEMPR')
@@ -30,20 +23,14 @@ class RelatorioController extends Controller
         return $pdf->download('relatorio_atrasos.pdf');
     }
 
-    /**
-     * Gera um relatório em PDF dos 10 livros mais emprestados.
-     */
     public function maisEmprestadosPdf()
     {
-        /**
-         * Consulta os 10 livros mais emprestados, ordenados pelo número de empréstimos e pelo nome do livro.
-         */
         $maisEmprestados = DB::table('EMPRESTIMOS')
             ->join('LIVROS', 'EMPRESTIMOS.EMPLIVRO', '=', 'LIVROS.LVRCODIGO')
-            ->select('LIVROS.LVRNOME', DB::raw('COUNT(EMPRESTIMOS.EMPCODIGO) as total_emprestimos'))
-            ->groupBy('LIVROS.LVRCODIGO', 'LIVROS.LVRNOME')
+            ->select('LIVROS.LVRTITULO as LVRNOME', DB::raw('COUNT(EMPRESTIMOS.EMPCODIGO) as total_emprestimos'))
+            ->groupBy('LIVROS.LVRCODIGO', 'LIVROS.LVRTITULO')
             ->orderByDesc('total_emprestimos')
-            ->orderBy('LIVROS.LVRNOME', 'asc')
+            ->orderBy('LIVROS.LVRTITULO', 'asc')
             ->limit(10)
             ->get();
 
