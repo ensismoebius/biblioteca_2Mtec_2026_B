@@ -1,25 +1,24 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Controller responsável por gerar relatórios em PDF.
+ * Gera relatorios da biblioteca em formato PDF.
  */
 class RelatorioController extends Controller
 {
     /**
-     * Gera um relatório em PDF dos empréstimos que estão atrasados.
+     * Gera o PDF dos emprestimos em atraso ha mais de sete dias.
      */
     public function atrasospdf()
     {
-        /**
-         * Consulta os empréstimos que estão atrasados (não devolvidos e com data de empréstimo maior que 7 dias atrás)
-         */
         $atrasos = DB::table('EMPRESTIMOS')
             ->join('LIVROS', 'EMPRESTIMOS.EMPLIVRO', '=', 'LIVROS.LVRCODIGO')
             ->join('CLIENTES', 'EMPRESTIMOS.EMPCLIENTE', '=', 'CLIENTES.CLICODIGO')
-            ->select('EMPRESTIMOS.*', 'LIVROS.LVRNOME', 'CLIENTES.CLINOME')
+            ->select('EMPRESTIMOS.*', 'LIVROS.LVRTITULO as LVRNOME', 'CLIENTES.CLINOME')
             ->whereNull('EMPRESTIMOS.EMPDTDEVOL')
             ->whereDate('EMPRESTIMOS.EMPDTEMPR', '<', now()->subDays(7))
             ->orderBy('EMPRESTIMOS.EMPDTEMPR')
@@ -31,19 +30,16 @@ class RelatorioController extends Controller
     }
 
     /**
-     * Gera um relatório em PDF dos 10 livros mais emprestados.
+     * Gera o PDF dos dez livros com mais emprestimos registrados.
      */
     public function maisEmprestadosPdf()
     {
-        /**
-         * Consulta os 10 livros mais emprestados, ordenados pelo número de empréstimos e pelo nome do livro.
-         */
         $maisEmprestados = DB::table('EMPRESTIMOS')
             ->join('LIVROS', 'EMPRESTIMOS.EMPLIVRO', '=', 'LIVROS.LVRCODIGO')
-            ->select('LIVROS.LVRNOME', DB::raw('COUNT(EMPRESTIMOS.EMPCODIGO) as total_emprestimos'))
-            ->groupBy('LIVROS.LVRCODIGO', 'LIVROS.LVRNOME')
+            ->select('LIVROS.LVRTITULO as LVRNOME', DB::raw('COUNT(EMPRESTIMOS.EMPCODIGO) as total_emprestimos'))
+            ->groupBy('LIVROS.LVRCODIGO', 'LIVROS.LVRTITULO')
             ->orderByDesc('total_emprestimos')
-            ->orderBy('LIVROS.LVRNOME', 'asc')
+            ->orderBy('LIVROS.LVRTITULO', 'asc')
             ->limit(10)
             ->get();
 
